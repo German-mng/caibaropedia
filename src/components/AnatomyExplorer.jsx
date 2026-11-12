@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatImagePath } from '../services/storage';
 
 export default function AnatomyExplorer() {
   const sections = [
@@ -88,7 +89,7 @@ export default function AnatomyExplorer() {
           
           <div className="lg:col-span-8 rounded-2xl overflow-hidden border border-[var(--border-hairline)] bg-[var(--bg-card)] relative aspect-[16/9]">
             <img
-              src="/images/art-biology.jpg"
+              src={formatImagePath('/images/art-biology.jpg')}
               alt="Анатомическое строение капибары"
               className="w-full h-full object-cover filter brightness-[0.98]"
               loading="lazy"

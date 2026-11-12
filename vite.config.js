@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export default defineConfig({
+  base: '/caibaropedia/',
   server: {
     host: true,
     port: 5173,
@@ -15,7 +18,18 @@ export default defineConfig({
   },
   plugins: [
     tailwindcss(),
-    react()
+    react(),
+    {
+      name: 'copy-404-for-spa',
+      closeBundle() {
+        try {
+          fs.copyFileSync(
+            path.resolve('dist/index.html'),
+            path.resolve('dist/404.html')
+          );
+        } catch {}
+      }
+    }
   ],
   build: {
     target: 'esnext',

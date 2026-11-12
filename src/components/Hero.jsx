@@ -1,5 +1,6 @@
 import React from 'react';
 import { Compass, BookOpen } from 'lucide-react';
+import { formatImagePath } from '../services/storage';
 
 export default function Hero({ onStartReading, onExploreAnatomy }) {
   return (
@@ -76,7 +77,7 @@ export default function Hero({ onStartReading, onExploreAnatomy }) {
             <div className="rounded-2xl border border-[var(--border-hairline)] overflow-hidden bg-[var(--bg-card)] shadow-[var(--shadow-soft)]">
               <div className="relative aspect-[4/5] w-full overflow-hidden">
                 <img
-                  src="/images/hero.jpg"
+                  src={formatImagePath('/images/hero.jpg')}
                   alt="Капибара на отмели реки Куяба в бассейне Пантанала"
                   className="w-full h-full object-cover filter brightness-[0.98]"
                   loading="eager"

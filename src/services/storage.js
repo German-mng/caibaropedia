@@ -462,9 +462,11 @@ export function getCategorySlug(category) {
 }
 
 export function formatImagePath(src) {
-  if (!src) return '/images/hero.jpg';
+  const base = import.meta.env?.BASE_URL || '/';
+  if (!src) return `${base}images/hero.jpg`.replace(/\/+/g, '/');
   if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('data:') || src.startsWith('blob:')) {
     return src;
   }
-  return src.startsWith('/') ? src : `/${src}`;
+  const cleanPath = src.startsWith('/') ? src.slice(1) : src;
+  return `${base}${cleanPath}`.replace(/\/+/g, '/');
 }
