@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Цветовая палитра: светлая тема */
+    --bg-page: #f7f4ee;
+    --bg-card: #fdfbf7;
+    --bg-card-solid: #fdfbf7;
+    --bg-surface: #efe9df;
+    --bg-subtle: #e8e1d5;
+
+    --border-hairline: rgba(31, 27, 22, 0.08);
+    --border-hover: rgba(31, 27, 22, 0.16);
+
+    --text-primary: #1f1b16;
+    --text-secondary: #5e554a;
+    --text-muted: #7b7266;
+    --text-inverted: #efe9de;
+
+    /* Pastel Green Accent */
+    --accent-green: #4f825e;
+    --accent-green-subtle: rgba(79, 130, 94, 0.12);
+    --accent-sand: #e3ece5;
+
+    /* Backward compatibility */
+    --accent-amber: var(--accent-green);
+    --accent-amber-subtle: var(--accent-green-subtle);
+
+    --shadow-soft: 0 1px 3px rgba(31, 27, 22, 0.05), 0 6px 16px rgba(31, 27, 22, 0.03);
+  }
+
+  .dark {
+    /* Цветовая палитра: тёмная тема */
+    --bg-page: #161513;
+    --bg-card: #1c1a18;
+    --bg-card-solid: #1c1a18;
+    --bg-surface: #262421;
+    --bg-subtle: #201e1b;
+
+    --border-hairline: rgba(239, 233, 222, 0.08);
+    --border-hover: rgba(239, 233, 222, 0.16);
+
+    --text-primary: #efe9de;
+    --text-secondary: #aaa398;
+    --text-muted: #8a847a;
+    --text-inverted: #161513;
+
+    /* Pastel Green Accent */
+    --accent-green: #8ec59f;
+    --accent-green-subtle: rgba(142, 197, 159, 0.15);
+    --accent-sand: #1e2b21;
+
+    /* Backward compatibility */
+    --accent-amber: var(--accent-green);
+    --accent-amber-subtle: var(--accent-green-subtle);
+
+    --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    overflow-x: hidden;
+  }
+}
+
+/* Typography Roles */
+.font-display {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.font-editorial-serif {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Quiet Surfaces */
+.surface-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-soft);
+  transition: border-color 0.18s ease;
+}
+
+.surface-card:hover {
+  border-color: var(--border-hover);
+}
+
+.surface-panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+}
+
+/* Стили основной кнопки */
+.btn-primary {
+  background-color: var(--accent-green);
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.dark .btn-primary {
+  color: #161513;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 4px;
+}
+
+/* Leaflet Slate Dark Mode Tiles */
+.dark .leaflet-tile-pane {
+  filter: brightness(0.65) invert(1) contrast(1.8) hue-rotate(195deg) saturate(0.2);
+}
+
+/* Editorial Monograph Typography */
+.prose-capy {
+  color: var(--text-primary);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose-capy p {
+  margin-bottom: 1.35rem;
+}
+
+.prose-capy p.lead {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.prose-capy h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
+}
+
+.prose-capy blockquote {
+  margin: 1.75rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 2px solid var(--accent-green);
+  background: var(--bg-surface);
+  border-radius: 0 8px 8px 0;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.prose-capy ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.prose-capy li {
+  margin-bottom: 0.5rem;
+}
+
+/* Print Media Styles for Academic Monograph */
+@media print {
+  nav,
+  footer,
+  .no-print,
+  button,
+  form,
+  .fixed {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .prose-capy {
+    color: #111111 !important;
+    font-size: 11pt !important;
+  }
+
+  .prose-capy p.lead {
+    color: #222222 !important;
+  }
+
+  .prose-capy blockquote {
+    background: #f7f7f7 !important;
+    border-left: 3px solid #333333 !important;
+    color: #333333 !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    color: #000000 !important;
+  }
+}
