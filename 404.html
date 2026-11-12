@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Капибаропедия — Научно-образовательная монография о капибаре</title>
+  <meta name="description" content="Интерактивная научная монография и полевой атлас капибары (Hydrochoerus hydrochaeris). Морфология, этология, ареалы обитания и фотоархив.">
+  
+  <!-- Favicon SVG: Minimalist Geometric Capybara in Warm Amber -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d97706' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 14c0 3.5 3 6 8 6s8-2.5 8-6c0-3-2-6-5-7-1-1.5-3-2-6-2-2.5 0-4.5 1.5-5 5-1.5 1-2 2.5-2 4z'/><circle cx='8' cy='11' r='1' fill='%23d97706'/></svg>">
+
+  <!-- Google Fonts: Inter (UI), Instrument Serif (Editorial quotes & titles), JetBrains Mono (Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Prevent Theme Flickering -->
+  <script>
+    try {
+      const theme = localStorage.getItem('capy_theme') || 'dark';
+      if (theme === 'dark' || (!localStorage.getItem('capy_theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch {}
+  </script>
+  <script type="module" crossorigin src="/caibaropedia/assets/index-nFPG3caj.js"></script>
+  <link rel="modulepreload" crossorigin href="/caibaropedia/assets/rolldown-runtime-WkwZ5CU-.js">
+  <link rel="modulepreload" crossorigin href="/caibaropedia/assets/vendor-motion-DowRUM0t.js">
+  <link rel="modulepreload" crossorigin href="/caibaropedia/assets/createLucideIcon-CqgWaS2S.js">
+  <link rel="modulepreload" crossorigin href="/caibaropedia/assets/vendor-leaflet-DFhNz_Sz.js">
+  <link rel="stylesheet" crossorigin href="/caibaropedia/assets/vendor-leaflet-BgX4OC_Y.css">
+  <link rel="stylesheet" crossorigin href="/caibaropedia/assets/index-CnQrFEP8.css">
+</head>
+<body class="min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased selection:bg-[var(--accent-green)] selection:text-white">
+  <div id="root"></div>
+</body>
+</html>
